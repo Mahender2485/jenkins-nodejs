@@ -13,6 +13,23 @@ pipeline {
             }
         }
 
+        staage('Slack Approval') {
+            steps {
+                slackSend(
+                     channel: '#jenkin-pipeline', 
+                     message: "*Approval Needed:* Please approve the deployment job in Jenkins UI."
+                        )
+
+                def userInput = input(
+                        id: 'ApproveDeployment', message: 'Approve Deployment?',
+                        parameters: [choice(choices: 'Yes\nNo', description: 'Do you approve?', name: 'approval')]
+                    )
+                    if (userInput != 'Yes') {
+                        error "Deployment not approved!"
+                     }
+                }
+        }
+
         stage('Run index.js') {
             steps {
                 sh 'node index.js'  // Runs the Node.js script
