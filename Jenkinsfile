@@ -17,7 +17,7 @@ pipeline {
             steps {
                 script {
                     slackSend(
-                        channel: '#deployments',
+                        channel: '#jenkin-pipeline',
                         message: "*Approval Needed:* Please approve the deployment job in Jenkins UI."
                     )
                     def userInput = input(
