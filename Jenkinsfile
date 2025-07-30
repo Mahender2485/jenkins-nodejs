@@ -28,3 +28,5 @@ pipeline {
         }
     }
 }
+// This Jenkinsfile defines a pipeline that clones a Node.js repository and runs a script.
+// It uses Node.js version 24.1.0, which must be configured in Jenkins
