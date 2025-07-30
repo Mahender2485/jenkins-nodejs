@@ -28,4 +28,3 @@ pipeline {
         }
     }
 }
-// This Jenkinsfile defines a pipeline that clones a Node.js repository and runs a script.
