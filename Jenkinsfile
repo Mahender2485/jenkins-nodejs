@@ -46,3 +46,4 @@ pipeline {
         }
     }
 }
+// This Jenkinsfile defines a pipeline that clones a Git repository, sends a Slack message for approval, and runs a Node.js script.
